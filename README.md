@@ -12,9 +12,9 @@ An API (application programming interface) in python 3.10 to produce calculation
 
 ## Setup
 
-1. Create a virtual environment based on python 2.10 (pyenv is recommended)
-2. ```pip install -r requirements.txt```console
-3. ```uvicorn main:app --reload --port:8000
+1. Create a virtual environment based on python 3.10 (pyenv is recommended)
+2. ```pip install -r requirements.txt```
+3. ```uvicorn main:app --reload --port:8000```
 
 ## Testing
 
@@ -32,8 +32,10 @@ An API (application programming interface) in python 3.10 to produce calculation
 }
 ```
 
-# To Do
-Wire up OpenAPI
-Fix resuscitation start_date_time to be a time also
-Validate
-Anything else
+## To Do
+
+1. Wire up OpenAPI
+2. Fix resuscitation start_date_time to be a time also
+3. Validate calculations
+4. Implement a database if needed server-side
+5. anything else
