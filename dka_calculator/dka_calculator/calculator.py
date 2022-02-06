@@ -1,6 +1,14 @@
-from typing import Optional
-from pydantic import BaseModel, Field
-
+def fluid_deficit_percentage(pH: float):
+    """
+    Returns assumed percentage dehydration based on pH
+    Modified from @dan-leach class method
+    """
+    if pH >= 7.2:
+        return 5
+    elif pH >= 7.1:
+        return 7
+    else:
+        return 10
 
 class Calculator(BaseModel):
     age: float = Field(ge=0, lt=19)
@@ -22,14 +30,7 @@ class Calculator(BaseModel):
     def fluidMaintenanceRate(self):
         return self.fluidMaintenanceVolume() / 24
     
-    def fluidDeficitPercentage(self):
-        if self.pH >= 7.2:
-            x = 5
-        elif self.pH >= 7.1:
-            x = 7
-        else:
-            x = 10
-        return x
+    
 
     def fluidDeficitVolume(self):
         x = self.fluidDeficitPercentage() * self.weight * 10
